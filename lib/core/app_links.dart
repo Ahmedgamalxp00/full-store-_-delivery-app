@@ -1,6 +1,6 @@
 abstract class AppLinks {
   // server link
-  static const String serverLink = "http://192.168.1.3/fullstoreapp";
+  static const String serverLink = "http://192.168.1.5/fullstoreapp";
 
   // authentication links
   static const String signUpLink = "$serverLink/delivery/auth/sginup.php";

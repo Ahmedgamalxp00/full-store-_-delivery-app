@@ -40,7 +40,7 @@ class OrderController extends GetxController {
     resulte.fold((failure) {
       requestError = failure.erorrMassage;
       requestState = RequestState.failure;
-      // customDialog(title: 'Error', body: failure.erorrMassage);
+      customDialog(title: 'Error', body: failure.erorrMassage);
     }, (data) {
       data['data'].sort((a, b) {
         return DateTime.parse(b['orders_datetime'])

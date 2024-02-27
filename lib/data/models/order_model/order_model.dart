@@ -5,8 +5,8 @@ class OrderModel {
   int? ordersDeliveryType;
   int? oredersPaymentMethod;
   int? ordersDeliveryPrice;
-  int? ordersPrice;
-  int? ordersTotalprice;
+  num? ordersPrice;
+  num? ordersTotalprice;
   int? ordersCoupon;
   int? ordersDiscount;
   int? ordersStatus;
@@ -19,6 +19,7 @@ class OrderModel {
   String? adressStreet;
   double? adressLat;
   double? adressLong;
+  String? adressDesc;
 
   OrderModel({
     this.ordersId,
@@ -41,6 +42,7 @@ class OrderModel {
     this.adressStreet,
     this.adressLat,
     this.adressLong,
+    this.adressDesc,
   });
 
   factory OrderModel.fromJson(Map<String, dynamic> json) => OrderModel(
@@ -50,8 +52,8 @@ class OrderModel {
         ordersDeliveryType: json['orders_delivery_type'] as int?,
         oredersPaymentMethod: json['oreders_payment_method'] as int?,
         ordersDeliveryPrice: json['orders_delivery_price'] as int?,
-        ordersPrice: json['orders_price'] as int?,
-        ordersTotalprice: json['orders_totalprice'] as int?,
+        ordersPrice: json['orders_price'] as num?,
+        ordersTotalprice: json['orders_totalprice'] as num?,
         ordersCoupon: json['orders_coupon'] as int?,
         ordersDiscount: json['orders_discount'] as int?,
         ordersStatus: json['orders_status'] as int?,
@@ -64,6 +66,7 @@ class OrderModel {
         adressStreet: json['adress_street'] as String?,
         adressLat: (json['adress_lat'] as num?)?.toDouble(),
         adressLong: (json['adress_long'] as num?)?.toDouble(),
+        adressDesc: json['adress_desc'] as String?,
       );
 
   Map<String, dynamic> toJson() => {
@@ -87,5 +90,6 @@ class OrderModel {
         'adress_street': adressStreet,
         'adress_lat': adressLat,
         'adress_long': adressLong,
+        'adress_desc': adressDesc,
       };
 }
